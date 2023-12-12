@@ -22,7 +22,7 @@ resource "azurerm_virtual_machine_extension" "this" {
 module "managed_disks" {
   source                         = "ptonini/managed-disk/azurerm"
   version                        = "~> 1.0.2"
-  for_each                       = var.extra_disks
+  for_each                       = var.managed_disks
   rg                             = var.rg
   virtual_machine_id             = var.virtual_machine_id
   name                           = each.key
